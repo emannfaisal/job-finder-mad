@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "750810654886",
+    "project_id": "job-finder-571c7",
+    "storage_bucket": "job-finder-571c7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750810654886:android:f257ce74c5611ce8b9ac67",
+        "android_client_info": {
+          "package_name": "com.example.job_finder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "750810654886-dv56bnqtc40e5o40tfnekkrudrius4cb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.job_finder",
+            "certificate_hash": "ca3622ae8840456b8c5a02f182b65a4e72c7fabf"
+          }
+        },
+        {
+          "client_id": "750810654886-10m0e1pv2b6rhoe5f1sj27huohpsr39r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQK4AwHS_5XOBqK2R56PbCKFI95Q5NIyA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "750810654886-10m0e1pv2b6rhoe5f1sj27huohpsr39r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "750810654886-smu8gvuh0sidjbpa873ldmk1qutfhdug.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.jobFinder"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
