@@ -1,0 +1,12 @@
+# secrets
+backend/smart_job_tracker/smart-job-tracker-key.json
+*.json
+.env
+
+# Flutter
+build/
+.dart_tool/
+.packages
+
+# Python
+__pycache__/
