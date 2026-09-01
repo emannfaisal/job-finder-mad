@@ -7,16 +7,25 @@ import firebase_admin
 from firebase_admin import credentials, auth
 import os
 import logging
-from dotenv import load_dotenv
 
-load_dotenv()
+from app.config import load_environment
+
+load_environment()
 logger = logging.getLogger(__name__)
 
-FIREBASE_KEY_PATH = os.getenv("FIREBASE_KEY_PATH", "smart-job-tracker-key.json")
+FIREBASE_KEY_PATH = os.getenv("FIREBASE_KEY_PATH")
 
 
 def initialize_firebase():
     """Initialize Firebase Admin SDK once at app startup."""
+    if not FIREBASE_KEY_PATH:
+        logger.warning(
+            "[FIREBASE] ⚠️ FIREBASE_KEY_PATH is not set. "
+            "Firebase authentication will be unavailable. "
+            "Set it in your environment or .env file."
+        )
+        return
+
     try:
         # Check if Firebase app is already initialized
         try:
@@ -31,8 +40,7 @@ def initialize_firebase():
         logger.warning(
             f"[FIREBASE] ⚠️ Credentials file not found: {FIREBASE_KEY_PATH}\n"
             "           Firebase authentication will be unavailable.\n"
-            "           Download from Firebase Console > Project Settings > Service Accounts\n"
-            "           and place it in the project root to enable Firebase features."
+            "           Set FIREBASE_KEY_PATH to the correct JSON key path."
         )
         # Don't raise - allow app to start without Firebase
     except Exception as e:

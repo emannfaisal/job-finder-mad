@@ -8,7 +8,7 @@ class DubizzleScraper(BaseScraper):
         target_url = "https://jobs.dubizzlelabs.com/?&location=Karachi%2C%20PK#positions"
 
         with sync_playwright() as p:
-            browser = p.chromium.launch(headless=False) # Keep False to see it load
+            browser = p.chromium.launch(headless=True)
             page = browser.new_page()
 
             print(f"Navigating to: {target_url}")

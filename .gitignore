@@ -1,12 +1,30 @@
-# secrets
-backend/smart_job_tracker/smart-job-tracker-key.json
-*.json
-.env
-
-# Flutter
-build/
-.dart_tool/
-.packages
-
 # Python
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment and Secrets
+.env
+*.json
+!package.json
+
+# Database and SQLite
+*.db
+*.sqlite3
+
+# Celery & Redis
+celerybeat-schedule*
+*.log
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

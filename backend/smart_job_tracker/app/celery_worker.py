@@ -1,17 +1,22 @@
+import os
 from celery import Celery
 from celery.schedules import crontab
+from .config import load_environment
 from .database import SessionLocal
 from .scraper_service import scrape_and_save_all
 
-# Initialize Celery
-# Replace 'localhost' with your Redis host if needed
+load_environment()
+
+broker_url = os.getenv("CELERY_BROKER_URL", "redis://localhost:6379/0")
+result_backend = os.getenv("CELERY_RESULT_BACKEND", broker_url)
+
 celery_app = Celery(
     "worker",
-    broker="redis://localhost:6379/0",
-    backend="redis://localhost:6379/0"
+    broker=broker_url,
+    backend=result_backend,
 )
 
-print("[CELERY] Initialized with Redis broker/backend at localhost:6379/0")
+print(f"[CELERY] Initialized with Redis broker/backend at {broker_url}")
 
 # Celery Configuration
 celery_app.conf.update(
