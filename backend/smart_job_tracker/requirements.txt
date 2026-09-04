@@ -8,6 +8,6 @@ playwright==1.58.0
 firebase-admin==7.4.0
 python-dotenv==1.2.2
 pydantic==2.13.2
+email-validator>=2.0.0
 requests==2.33.1
 psycopg2-binary>=2.9.9
-
